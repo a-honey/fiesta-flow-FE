@@ -1,9 +1,12 @@
 import React from "react";
+import SearchTab from "./SearchTab";
 
 function FindPage() {
   return (
     <main>
-      <div>발견</div>
+      <div>
+        <SearchTab />
+      </div>
     </main>
   );
 }

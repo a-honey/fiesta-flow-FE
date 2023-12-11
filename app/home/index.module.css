@@ -3,5 +3,39 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 20px;
+}
+
+.container > h3 {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.myFestival {
+  font-size: 30px;
+}
+
+.speech_balloon_container {
+  position: relative;
+  width: 150px;
+}
+
+.speech_balloon_container > div {
+  position: absolute;
+  width: 150px;
+  top: 15px;
+  text-align: center;
+}
+
+.imgSliderContainer {
+  height: 440px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }

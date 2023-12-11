@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 
 const AnswerChip = ({ answer }: { answer: string }) => {
   return (
-    <li key={answer} className={styles.question_chip}>
+    <li key={answer} className={styles.answer_chip}>
       {answer}
     </li>
   );

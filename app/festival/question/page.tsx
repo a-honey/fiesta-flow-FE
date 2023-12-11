@@ -1,8 +1,10 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "./index.module.css";
 import QuestionChip from "./QuestionChip";
 import AnswerChip from "./AnswerChip";
 import Link from "next/link";
+import ResultModal from "./ResultModal";
 
 const QUESTION_LIST = [
   {
@@ -68,19 +70,40 @@ const QUESTION_LIST = [
 ];
 
 function FestivalTestPage() {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [isOpenResultModal, setIsOpenResultModal] = useState(false);
+
   return (
-    <main>
+    <>
       <section>
         <div>뒤로가기</div>
         <Link href="/">닫기</Link>
       </section>
-      <QuestionChip question={QUESTION_LIST[0].question} />
-      <ul className={styles.question_list}>
-        {QUESTION_LIST[0].answerList.map((item) => (
-          <AnswerChip key={item.answer} answer={item.answer} />
-        ))}
-      </ul>
-    </main>
+      {isOpenResultModal || (
+        <>
+          <QuestionChip
+            question={QUESTION_LIST[currentQuestionIndex].question}
+          />
+          <ul className={styles.answer_list}>
+            {QUESTION_LIST[currentQuestionIndex].answerList.map((item) => (
+              <AnswerChip key={item.answer} answer={item.answer} />
+            ))}
+          </ul>
+          <button
+            onClick={() => {
+              if (currentQuestionIndex !== 5) {
+                setCurrentQuestionIndex((prev) => prev + 1);
+              } else {
+                setIsOpenResultModal(true);
+              }
+            }}
+          >
+            다음
+          </button>
+        </>
+      )}
+      {isOpenResultModal && <ResultModal />}
+    </>
   );
 }
 

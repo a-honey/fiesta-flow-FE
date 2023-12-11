@@ -1,8 +1,14 @@
-.question_list {
+.question {
+  font-size: 25px;
+}
+.answer_list {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
-.question_chip {
+.answer_chip {
   background-color: pink;
+  padding: 22px;
+  border-radius: 50px;
 }

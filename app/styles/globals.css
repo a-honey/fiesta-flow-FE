@@ -17,4 +17,16 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+}
+
+.blue > button {
+  width: 100%;
+  background-color: #287cff;
+  padding: 20px;
+  border-radius: 50px;
 }

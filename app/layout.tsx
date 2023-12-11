@@ -51,9 +51,11 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/favicon.png" type="image/png" />
       <body className={inter.className}>
-        <Header />
-        <Nav />
-        {children}
+        <main>
+          <Header />
+          <Nav />
+          {children}
+        </main>
       </body>
     </html>
   );

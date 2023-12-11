@@ -2,12 +2,16 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #000000;
+  background-color: #baddfd;
   color: #ffffff;
 }
 
 main {
+  background-color: #000000;
   padding: 20px;
+  margin: auto;
+  max-width: 600px;
+  height: 100vh;
 }
 
 .blue {

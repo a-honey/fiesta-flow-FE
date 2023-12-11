@@ -4,14 +4,14 @@ import FestivalChip from "./FestivalChip";
 
 function StoragePage() {
   return (
-    <main>
+    <>
       <div className={styles.container}>
         <FestivalChip />
         <FestivalChip />
         <FestivalChip />
         <FestivalChip />
       </div>
-    </main>
+    </>
   );
 }
 

@@ -4,10 +4,10 @@ import ImgBox from "./home/ImgBox";
 
 function HomePage() {
   return (
-    <main>
+    <>
       <TestBanner />
       <ImgBox />
-    </main>
+    </>
   );
 }
 

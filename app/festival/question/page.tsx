@@ -1,10 +1,13 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import styles from "./index.module.css";
 import QuestionChip from "./QuestionChip";
 import AnswerChip from "./AnswerChip";
-import Link from "next/link";
 import ResultModal from "./ResultModal";
+import arrow_left from "@/app/assets/arrow_left.svg";
+import close from "@/app/assets/close.svg";
 
 const QUESTION_LIST = [
   {
@@ -75,9 +78,20 @@ function FestivalTestPage() {
 
   return (
     <>
-      <section>
-        <div>뒤로가기</div>
-        <Link href="/">닫기</Link>
+      <section className={styles.icon_container}>
+        <Image
+          src={arrow_left}
+          alt="Fiesta Flow logo"
+          width={25}
+          height={25}
+          onClick={() => {
+            setCurrentQuestionIndex((prev) => prev - 1);
+          }}
+        />
+
+        <Link href="/">
+          <Image src={close} alt="Fiesta Flow logo" width={40} height={40} />
+        </Link>
       </section>
       {isOpenResultModal || (
         <>

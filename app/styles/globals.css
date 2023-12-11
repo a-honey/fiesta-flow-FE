@@ -9,3 +9,12 @@ body {
 main {
   padding: 20px;
 }
+
+.blue {
+  background-color: #0064ff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

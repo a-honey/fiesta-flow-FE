@@ -1,0 +1,8 @@
+.question_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.question_chip {
+  background-color: pink;
+}

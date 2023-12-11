@@ -1,13 +1,85 @@
 import React from "react";
+import styles from "./index.module.css";
+import QuestionChip from "./QuestionChip";
+import AnswerChip from "./AnswerChip";
+import Link from "next/link";
+
+const QUESTION_LIST = [
+  {
+    question: "넌 어떤 축제가 더 좋아?",
+    answerList: [
+      { answer: "귀가 즐거운게 좋아", answerBody: "음악" },
+      { answer: "눈이 행복한게 좋아", answerBody: "공연" },
+      { answer: "입이 쉬지 않았으면 좋겠어", answerBody: "음식" },
+      { answer: "움직이는게 좋아", answerBody: "공연" },
+      { answer: "다 좋아", answerBody: null },
+    ],
+  },
+  {
+    question: "축제에 가고 싶은 이유는?",
+    answerList: [
+      { answer: "각 지역의 특색을 느끼고 싶어", answerBody: "지역즐기기" },
+      { answer: "색다른 추억을 쌓고 싶어", answerBody: "추억쌓기" },
+      { answer: "새로운 인연을 찾을지도 몰라", answerBody: "인연찾기" },
+      { answer: "그냥 즐길 수 있잖아", answerBody: null },
+    ],
+  },
+  {
+    question: "이동 시간도 고려해야할까?",
+    answerList: [
+      { answer: "무조건 가까운게 좋아", answerBody: "가까운 지역" },
+      { answer: "멀어도 상관없어", answerBody: null },
+    ],
+  },
+  {
+    question: "축제에 가기로 했다. 어느 계절에 갈까?",
+    answerList: [
+      { answer: "봄", answerBody: "봄" },
+      { answer: "여름", answerBody: "여름" },
+      { answer: "가을", answerBody: "가을" },
+      { answer: "겨울", answerBody: "겨울" },
+      { answer: "멀어도 상관없어", answerBody: null },
+    ],
+  },
+  {
+    question: "혼자 가고싶어, 아니면 여러명이서 가고싶어?",
+    answerList: [
+      {
+        answer: "혼자가서 새로운 사람 사이에서 즐길래",
+        answerBody: "혼자서 가는",
+      },
+      {
+        answer: "여러명이랑 가야 두배 더 재밌지",
+        answerBody: "여러명이서 가는",
+      },
+      { answer: "상관없어", answerBody: null },
+    ],
+  },
+  {
+    question:
+      "축제에 온지 한 시간 지났는데, 만원이 남아있다. 이 마지막 찬스를 어디에 쓸래?",
+    answerList: [
+      { answer: "식품코너에 가보자", answerBody: "먹거리가 풍부한" },
+      { answer: "활동체험부스에 가보자", answerBody: "다양한 활동이 많은" },
+      { answer: "굿즈를 살래", answerBody: "굿즈상품이 다양한" },
+      { answer: "못고르겠어!", answerBody: null },
+    ],
+  },
+];
 
 function FestivalTestPage() {
   return (
     <main>
-      <div>질문</div>
-      <div>답변1</div>
-      <div>답변1</div>
-      <div>답변1</div>
-      <div>답변1</div>
+      <section>
+        <div>뒤로가기</div>
+        <Link href="/">닫기</Link>
+      </section>
+      <QuestionChip question={QUESTION_LIST[0].question} />
+      <ul className={styles.question_list}>
+        {QUESTION_LIST[0].answerList.map((item) => (
+          <AnswerChip key={item.answer} answer={item.answer} />
+        ))}
+      </ul>
     </main>
   );
 }

@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./index.module.css";
 
-const QuestionChip = () => {
-  return <div>필터</div>;
+const QuestionChip = ({ question }: { question: string }) => {
+  return <div>{question}</div>;
 };
 
 export default QuestionChip;

@@ -12,6 +12,8 @@ main {
   margin: auto;
   max-width: 600px;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .blue {
@@ -33,4 +35,13 @@ main {
   background-color: #287cff;
   padding: 20px;
   border-radius: 50px;
+}
+
+.white_button {
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
 }

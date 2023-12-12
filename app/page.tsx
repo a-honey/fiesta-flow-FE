@@ -5,7 +5,9 @@ function HomePage() {
   return (
     <>
       <div>Fiesta Flow</div>
-      <Link href="/home">시작하기</Link>
+      <Link href="/home" className="white_button">
+        시작하기
+      </Link>
     </>
   );
 }

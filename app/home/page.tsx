@@ -1,11 +1,12 @@
 import React from "react";
-import Link from "next/link";
+import TestBanner from "./TestBanner";
+import ImgBox from "./ImgBox";
 
 function HomePage() {
   return (
     <>
-      <div>Fiesta Flow</div>
-      <Link href="/home">시작하기</Link>
+      <TestBanner />
+      <ImgBox />
     </>
   );
 }

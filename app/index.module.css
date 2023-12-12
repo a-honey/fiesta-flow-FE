@@ -1,0 +1,10 @@
+.splash_image {
+  position: relative;
+  margin: auto;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}

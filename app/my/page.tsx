@@ -11,20 +11,22 @@ function MyPage() {
     <>
       <div className={styles.container}>
         <div className={styles.festival_chip_container}>
-          <Image src={profile} alt="프로필 이미지" width={100} height={100} />
+          <Image src={profile} alt="프로필 이미지" width={80} height={80} />
           <div className={styles.festival_chip_title}>
-            <div>이름</div>
+            <div>정아현</div>
             <Link href="#">
               <Image
                 src={edit}
                 alt="프로필 수정 이동 아이콘"
-                width={25}
-                height={25}
+                width={20}
+                height={20}
               />
             </Link>
           </div>
         </div>
         <ul className={styles.festival_list_container}>
+          <BookedFestivalChip />
+          <BookedFestivalChip />
           <BookedFestivalChip />
         </ul>
       </div>

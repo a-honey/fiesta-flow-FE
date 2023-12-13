@@ -5,13 +5,13 @@ import curation4 from "@/app/assets/curation4.jpg";
 const BookedFestivalChip = () => {
   return (
     <li key="curation1" className={styles.festival_chip_container}>
-      <Image src={curation4} alt="축제 이미지" width={150} height={150} />
+      <Image src={curation4} alt="축제 이미지" width={100} height={100} />
       <div className={styles.festival_chip_content}>
         <div className={styles.festival_chip_title}>
-          <span>d-day</span>
+          <span>D-15</span>
           <div>서울 재즈 페스티벌</div>
         </div>
-        <div className={styles.festival_chip_date}>날짜</div>
+        <div className={styles.festival_chip_date}>2023-04-12(화)</div>
       </div>
     </li>
   );

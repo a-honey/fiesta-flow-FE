@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **Fiesta Flow**
 
-## Getting Started
+**Fiesta Flow**는 개인의 성향에 따라 축제를 추천해주는 서비스로, 유저들에게 다양한 축제에 대한 정보와 고려사항 등을 제공합니다. 다양한 유저 성향을 고려하여 맞춤형으로 축제를 추천하고, 현재 진행 중인 축제에 대한 상세한 정보와 예약 서비스를 제공하여 사용자들이 더욱 즐거운 시간을 보낼 수 있도록 돕습니다.
 
-First, run the development server:
+![image](https://github.com/potenday-project/tripper_FE/assets/75254185/137ebe78-b383-4173-9b53-20f725c7774e)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **주요 기능 및 특징**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🩷 성**향 기반 축제 추천**
+FiestaFlow는 사용자의 성향을 파악하여 가장 적합한 축제를 추천합니다. 예를 들어, 음악, 문화, 먹거리 등 다양한 성향을 고려하여 맞춤형으로 최적의 경험을 제공합니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 💛 축제 정보 제공
+현재 진행 중인 축제에 대한 정보를 제공하여 사용자가 언제 어디서든 찾고자 하는 정보를 손쉽게 확인할 수 있습니다. 축제 일정, 장소, 참여 비용 등의 상세한 정보가 포함됩니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 💚 일정 추가 서비스
+특정 축제를 내 일정에 추가하여 내가 가기로 한 축제를 간편하게 모아볼 수 있는 기능을 제공합니다.
 
-## Learn More
+### 💜 커뮤니티 기능
+각 축제에 보관 기능을 추가하여 현재 가장 많은 선호를 받고 있는 축제가 무엇인지 확인할 수 있습니다.
 
-To learn more about Next.js, take a look at the following resources:
+## **프로젝트 기간**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 2023.12.07 ~ 2023.12.17
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## **기술 스택 및 도구**
+### 프론트엔드
+### 백엔드
+### 기획 및 배포
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## **프로젝트 팀원 및 역할 분담**

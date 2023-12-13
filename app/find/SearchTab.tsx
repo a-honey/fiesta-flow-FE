@@ -15,10 +15,10 @@ const SearchTab = () => {
           height={25}
         />
       </div>
-      <div>
-        <div>검색어</div>
-        <div>추천검색어</div>
-        <div>추천검색어</div>
+      <div className={styles.search_container}>
+        <div className={`${styles.search_item} ${styles.active}`}>검색어</div>
+        <div className={styles.search_item}>추천검색어</div>
+        <div className={styles.search_item}>추천검색어</div>
       </div>
     </div>
   );

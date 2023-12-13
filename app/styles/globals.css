@@ -19,6 +19,9 @@ main {
 
 .blue {
   background-color: #0064ff;
+  background-image: url("../assets/gradation.png");
+  background-size: cover;
+  background-position: center;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -33,7 +36,7 @@ main {
 
 .blue > button {
   width: 100%;
-  background-color: #287cff;
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 20px;
   border-radius: 50px;
 }

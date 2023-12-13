@@ -89,7 +89,7 @@ function FestivalTestPage() {
           }}
         />
 
-        <Link href="/">
+        <Link href="/home">
           <Image src={close} alt="Fiesta Flow logo" width={40} height={40} />
         </Link>
       </section>

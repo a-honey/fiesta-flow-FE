@@ -2,7 +2,9 @@
 
 **Fiesta Flow**는 개인의 성향에 따라 축제를 추천해주는 서비스로, 유저들에게 다양한 축제에 대한 정보와 고려사항 등을 제공합니다. 다양한 유저 성향을 고려하여 맞춤형으로 축제를 추천하고, 현재 진행 중인 축제에 대한 상세한 정보와 예약 서비스를 제공하여 사용자들이 더욱 즐거운 시간을 보낼 수 있도록 돕습니다.
 
-![image](https://github.com/potenday-project/tripper_FE/assets/75254185/137ebe78-b383-4173-9b53-20f725c7774e)
+![image](https://github.com/potenday-project/tripper_FE/assets/75254185/68d5c435-2851-4cd7-8e97-76820528f75f)
+![image](https://github.com/potenday-project/tripper_FE/assets/75254185/4377efa0-d7a8-4b9a-a124-fa34f26da111)
+
 
 ## **주요 기능 및 특징**
 

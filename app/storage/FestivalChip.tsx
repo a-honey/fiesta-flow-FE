@@ -13,7 +13,7 @@ const FestivalChip = () => {
         width={25}
         height={25}
       />
-      <Image src={festivalItemImg} alt="bookmark" width={270} height={300} />
+      <Image src={festivalItemImg} alt="bookmark" width={177} height={300} />
       <div>
         <h4>축제명</h4>
         <h5>위치</h5>

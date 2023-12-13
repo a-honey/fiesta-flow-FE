@@ -27,7 +27,7 @@ const ImgSlider = () => {
           key={item.curationTitle}
           src={item.curationSrc}
           alt={item.curationTitle}
-          width={index === activeImgIndex ? 300 : 40}
+          width={index === activeImgIndex ? 200 : 25}
           height={600}
           onClick={() => {
             setActiveImgIndex(index);

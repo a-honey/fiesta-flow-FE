@@ -1,0 +1,15 @@
+.image_container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50vh;
+}
+
+.arrow_left {
+  z-index: 999;
+}
+
+.content {
+  margin-top: 35vh;
+}

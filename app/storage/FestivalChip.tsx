@@ -2,10 +2,11 @@ import Image from "next/image";
 import styles from "./index.module.css";
 import bookmark from "@/app/assets/bookmark.svg";
 import festivalItemImg from "@/app/assets/curation1.jpg";
+import Link from "next/link";
 
 const FestivalChip = () => {
   return (
-    <div className={styles.chip}>
+    <Link className={styles.chip} href="/detail/12">
       <div className={styles.image_container}>
         <Image
           className={styles.bookmark}
@@ -29,7 +30,7 @@ const FestivalChip = () => {
         <h4>축제명</h4>
         <h5>위치</h5>
       </div>
-    </div>
+    </Link>
   );
 };
 

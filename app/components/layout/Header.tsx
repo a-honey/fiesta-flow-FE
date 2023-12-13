@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./Header.module.css";
-import notification from "@/app/assets/notification.png";
+import notification from "@/app/assets/notification.svg";
 import profile from "@/app/assets/profile.svg";
 import Link from "next/link";
 

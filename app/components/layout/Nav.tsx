@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/app/assets/logo.png";
+import logo from "@/app/assets/logo.svg";
 import styles from "./Nav.module.css";
 
 const Nav = () => {

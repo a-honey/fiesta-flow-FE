@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import styles from "./index.module.css";
 import arrow_left from "@/app/assets/arrow_left.svg";
 
 export default function RootLayout({
@@ -6,10 +9,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
+
+  const goBack = () => {
+    router.back();
+  };
+
   return (
-    <>
-      <Image src={arrow_left} alt="Fiesta Flow logo" width={25} height={25} />
+    <section className={styles.bg}>
+      <Image
+        src={arrow_left}
+        alt="뒤로가기"
+        onClick={goBack}
+        width={25}
+        height={25}
+      />
       {children}
-    </>
+    </section>
   );
 }

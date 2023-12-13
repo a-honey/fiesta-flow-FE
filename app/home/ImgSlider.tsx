@@ -20,19 +20,31 @@ const IMG_DATA = [
 const ImgSlider = () => {
   const [activeImgIndex, setActiveImgIndex] = useState(2);
 
+  const gridColumns = Array.from({ length: 5 }, (_, index) =>
+    index === activeImgIndex ? "4fr" : "1fr"
+  );
+
   return (
-    <div className={styles.imgSliderContainer}>
+    <div
+      className={styles.imgSliderContainer}
+      style={{ gridTemplateColumns: gridColumns.join(" ") }}
+    >
       {IMG_DATA.map((item, index) => (
-        <Image
-          key={item.curationTitle}
-          src={item.curationSrc}
-          alt={item.curationTitle}
-          width={index === activeImgIndex ? 200 : 25}
-          height={600}
-          onClick={() => {
-            setActiveImgIndex(index);
-          }}
-        />
+        <div key={item.curationTitle} className={styles.cover_container}>
+          <Image
+            src={item.curationSrc}
+            alt={item.curationTitle}
+            quality={100}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
+            onClick={() => {
+              setActiveImgIndex(index);
+            }}
+          />
+        </div>
       ))}
     </div>
   );

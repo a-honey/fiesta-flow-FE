@@ -36,8 +36,13 @@
 }
 
 .imgSliderContainer {
+  position: relative;
   height: 440px;
-  display: flex;
+  display: grid;
   justify-content: space-between;
   gap: 5px;
+}
+
+.cover_container {
+  position: relative;
 }

@@ -11,7 +11,7 @@ import curation5 from "@/app/assets/curation5.jpg";
 
 const IMG_DATA = [
   { curationSrc: curation1, curationTitle: "서울 불꽃 축제" },
-  { curationSrc: curation2, curationTitle: "석촌호수 벚꽃 추천" },
+  { curationSrc: curation2, curationTitle: "석촌호수 벚꽃 축제" },
   { curationSrc: curation3, curationTitle: "남양주 낭만등불축제" },
   { curationSrc: curation4, curationTitle: "월드 디제이 페스티벌" },
   { curationSrc: curation5, curationTitle: "워터뮤직페스티벌" },

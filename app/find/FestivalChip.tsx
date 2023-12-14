@@ -1,15 +1,31 @@
 import Image from "next/image";
 import styles from "./index.module.css";
-import festivalItemImg from "@/app/assets/curation1.jpg";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-const FestivalChip = () => {
+const FestivalChip = ({
+  data,
+  handleFestivalClick,
+  index,
+}: {
+  data: { imageUrl: string | StaticImport; addr1: string; title: string };
+  handleFestivalClick: (index: number) => void;
+  index: number;
+}) => {
   return (
-    <div className={styles.chip}>
+    <div
+      className={styles.chip}
+      onClick={() => {
+        handleFestivalClick(index);
+      }}
+    >
       <Image
-        src={festivalItemImg}
-        alt="페스티벌이미지"
-        width={200}
-        height={150}
+        src={data.imageUrl}
+        alt={data.title}
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "cover",
+        }}
       />
     </div>
   );

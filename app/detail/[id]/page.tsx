@@ -21,7 +21,7 @@ export default function DetailPage(props: any) {
         />
       </div>
       <div className={styles.content}>
-        <div>
+        <div className={styles.info_container}>
           <h2>서울 재즈 페스티벌</h2>
           <h3>여름에 즐기는 귀가 즐거운 음악 페스티벌!</h3>
         </div>

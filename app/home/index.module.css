@@ -46,3 +46,11 @@
 .cover_container {
   position: relative;
 }
+
+.curation_title {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 10px;
+  font-weight: 700;
+}

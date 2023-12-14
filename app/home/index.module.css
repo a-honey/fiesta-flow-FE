@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
 }
 
@@ -37,7 +37,7 @@
 
 .imgSliderContainer {
   position: relative;
-  height: 440px;
+  height: 60vh;
   display: grid;
   justify-content: space-between;
   gap: 5px;

@@ -75,6 +75,16 @@ const QUESTION_LIST = [
 function FestivalTestPage() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isOpenResultModal, setIsOpenResultModal] = useState(false);
+  const [activeAnswerIndex, setActiveAnswerIndex] = useState<null | number>(
+    null
+  );
+
+  const handleActiveAnswerClick = (index: number) => {
+    setActiveAnswerIndex(index);
+    console.log(
+      QUESTION_LIST[currentQuestionIndex].answerList[index].answerBody
+    );
+  };
 
   return (
     <>
@@ -99,14 +109,24 @@ function FestivalTestPage() {
             question={QUESTION_LIST[currentQuestionIndex].question}
           />
           <ul className={styles.answer_list}>
-            {QUESTION_LIST[currentQuestionIndex].answerList.map((item) => (
-              <AnswerChip key={item.answer} answer={item.answer} />
-            ))}
+            {QUESTION_LIST[currentQuestionIndex].answerList.map(
+              (item, index) => (
+                <AnswerChip
+                  key={item.answer}
+                  index={index}
+                  answer={item.answer}
+                  isActive={activeAnswerIndex === index}
+                  handleActiveAnswerClick={handleActiveAnswerClick}
+                />
+              )
+            )}
           </ul>
           <button
+            className={`${activeAnswerIndex !== null && styles.white_active}`}
             onClick={() => {
               if (currentQuestionIndex !== 5) {
                 setCurrentQuestionIndex((prev) => prev + 1);
+                setActiveAnswerIndex(null);
               } else {
                 setIsOpenResultModal(true);
               }

@@ -27,7 +27,7 @@ function FestivalPage() {
           </div>
         </div>
       </div>
-      <button>
+      <button className={styles.start_button}>
         <Link href="/festival/question">테스트 시작하기</Link>
       </button>
     </>

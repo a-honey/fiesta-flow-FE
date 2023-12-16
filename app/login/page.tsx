@@ -5,6 +5,13 @@ import AlertBox from "./AlertBox";
 import useAuthStore from "../store";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { instance } from "../api";
+
+type RESPONSE_DATA = {
+  id: string;
+  profileImage: null | string;
+  access_token: string;
+};
 
 function LoginPage() {
   const router = useRouter();
@@ -13,13 +20,28 @@ function LoginPage() {
     password: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log(loginFormBody);
-    useAuthStore.getState().login("id", "", "아현");
-    router.push("/home");
+    try {
+      const response = await instance.post<RESPONSE_DATA>(
+        "/auth/login",
+        loginFormBody
+      );
+      useAuthStore
+        .getState()
+        .login(
+          response.data.id,
+          response.data.profileImage,
+          "유저이름",
+          response.data.access_token
+        );
+      router.push("/home");
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   return (
     <form onSubmit={handleSubmit} className={styles.container}>
       <h3>로그인</h3>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./index.module.css";
 import SearchTab from "./SearchTab";
 import FestivalChip from "./FestivalChip";
@@ -8,6 +8,14 @@ import curation1 from "@/app/assets/curation1.jpg";
 import curation2 from "@/app/assets/curation2.jpg";
 import curation3 from "@/app/assets/curation3.jpg";
 import curation4 from "@/app/assets/curation4.jpg";
+import { instance } from "../api";
+
+type FESTATIVAL_DATA_TYPE = {
+  contentid: number;
+  addr1: string;
+  title: string;
+  firstimage: string;
+}[];
 
 const FESTIVAL_LIST = [
   {
@@ -40,6 +48,27 @@ function FindPage() {
   const handleFestivalClick = (index: number) => {
     setCurrentFestivalIndex(index);
   };
+
+  const [isFetching, setIsFetching] = useState(false);
+  const [festivalList, setFestivalList] = useState<FESTATIVAL_DATA_TYPE>([]);
+
+  useEffect(() => {
+    const getDatas = async () => {
+      setIsFetching(true);
+      try {
+        await instance
+          .get<FESTATIVAL_DATA_TYPE>("/festival/allFestival?page=1&limit=50")
+          .then((res) => {
+            setFestivalList(res.data);
+          });
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsFetching(false);
+      }
+    };
+    getDatas();
+  }, []);
 
   return (
     <>

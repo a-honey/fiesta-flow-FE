@@ -1,12 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.css";
 import profile from "@/app/assets/profile.svg";
 import edit from "@/app/assets/edit.svg";
 import BookedFestivalChip from "./BookedFestivalChip";
+import { instance } from "../api";
+
+type USER_DATA_TYPE = {
+  id: string;
+  username: string;
+  profileImage: string;
+};
+const INITIAL_USER_DATA = {
+  id: "",
+  username: "",
+  profileImage: "",
+};
 
 function MyPage() {
+  const [isFetching, setIsFetching] = useState(false);
+  const [userData, setUserData] = useState<USER_DATA_TYPE>(INITIAL_USER_DATA);
+
+  useEffect(() => {
+    const getDatas = async () => {
+      setIsFetching(true);
+      try {
+        await instance.get<USER_DATA_TYPE>("/users/current").then((res) => {
+          setUserData({
+            id: res.data.id,
+            username: res.data.username,
+            profileImage: res.data.profileImage,
+          });
+        });
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsFetching(false);
+      }
+    };
+    getDatas();
+  }, []);
+
   return (
     <>
       <div className={styles.container}>

@@ -16,7 +16,7 @@ function FestivalPage() {
           className={styles.logo}
           src={logo_white}
           alt="Fiesta Flow logo"
-          width={55}
+          width={52}
           height={30}
         />
         <div className={styles.content_container}>

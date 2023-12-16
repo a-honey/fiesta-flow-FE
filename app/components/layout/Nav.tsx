@@ -8,7 +8,7 @@ const Nav = () => {
   return (
     <nav className={styles.container}>
       <Link href="/find">
-        <div className={styles.nav_item}>발견</div>
+        <div className={`${styles.nav_item} ${styles.active}`}>발견</div>
       </Link>
       <Link href="/home">
         <Image src={logo} alt="Fiesta Flow logo" width={55} height={30} />

@@ -11,8 +11,8 @@ function MyPage() {
     <>
       <div className={styles.container}>
         <div className={styles.festival_chip_container}>
-          <Image src={profile} alt="프로필 이미지" width={80} height={80} />
-          <div className={styles.festival_chip_title}>
+          <Image src={profile} alt="프로필 이미지" width={60} height={60} />
+          <div className={styles.festival_profile_name}>
             <div>정아현</div>
             <Link href="#">
               <Image

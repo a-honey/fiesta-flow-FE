@@ -5,7 +5,6 @@ import ImgSlider from "./ImgSlider";
 const ImgBox = () => {
   return (
     <section className={styles.container}>
-      <h3>오늘의 큐레이션</h3>
       <ImgSlider />
     </section>
   );

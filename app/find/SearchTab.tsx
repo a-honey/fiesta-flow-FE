@@ -29,8 +29,8 @@ const SearchTab = () => {
         <Image
           src={search_blue}
           alt="Fiesta Flow logo"
-          width={25}
-          height={25}
+          width={20}
+          height={20}
           onClick={handleSearchClick}
         />
       </div>

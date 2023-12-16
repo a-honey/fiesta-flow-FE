@@ -12,8 +12,8 @@ const FestivalChip = () => {
           className={styles.bookmark}
           src={bookmark}
           alt="bookmark"
-          width={25}
-          height={25}
+          width={20}
+          height={24}
         />
         <Image
           src={festivalItemImg}
@@ -26,7 +26,7 @@ const FestivalChip = () => {
           }}
         />
       </div>
-      <div>
+      <div className={styles.content_container}>
         <h4>축제명</h4>
         <h5>위치</h5>
       </div>

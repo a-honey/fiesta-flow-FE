@@ -11,13 +11,21 @@ const ActiveFestivalChip = ({
   return (
     <div className={styles.active_chip}>
       <div className={styles.active_chip_image_container}>
-        <Image src={data.imageUrl} alt={data.title} width={200} height={250} />
+        <Image
+          src={data.imageUrl}
+          alt={data.title}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+        />
         <Image
           className={styles.active_chip_bookmark}
           src={bookmark}
           alt="보관 아이콘"
-          width={25}
-          height={25}
+          width={20}
+          height={24}
         />
       </div>
       <div className={styles.active_chip_content_container}>

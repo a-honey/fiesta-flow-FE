@@ -17,12 +17,7 @@ const Header = () => {
 
   return (
     <header className={styles.container}>
-      <Image
-        src={notification}
-        alt="Fiesta Flow logo"
-        width={18}
-        height={21.5}
-      />
+      <Image src={notification} alt="Fiesta Flow logo" width={22} height={24} />
       {isLoggedIn ? (
         <Link href="/my">
           <Image
@@ -37,8 +32,8 @@ const Header = () => {
           <Image
             src={login_svg}
             alt="로그인페이지 바로가기"
-            width={25}
-            height={25}
+            width={21}
+            height={22}
           />
         </Link>
       )}

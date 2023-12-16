@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./index.module.css";
 import speech_balloon from "@/app/assets/speech_balloon.png";
+import arrow_left from "@/app/assets/arrow_left.svg";
 
 const TestBanner = () => {
   return (
@@ -16,8 +17,8 @@ const TestBanner = () => {
               className={styles.mini}
               src={speech_balloon}
               alt="Fiesta Flow logo"
-              width={150}
-              height={40}
+              width={108}
+              height={38}
             />
             <div>어디로 가볼까?</div>
           </div>

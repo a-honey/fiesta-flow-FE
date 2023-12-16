@@ -21,8 +21,8 @@ export default function RootLayout({
         src={arrow_left}
         alt="뒤로가기"
         onClick={goBack}
-        width={25}
-        height={25}
+        width={10}
+        height={20}
       />
       {children}
     </section>

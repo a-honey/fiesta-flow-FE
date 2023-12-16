@@ -14,7 +14,7 @@ function MyPage() {
           <Image src={profile} alt="프로필 이미지" width={60} height={60} />
           <div className={styles.festival_profile_name}>
             <div>정아현</div>
-            <Link href="#">
+            <Link href="/my/edit">
               <Image
                 src={edit}
                 alt="프로필 수정 이동 아이콘"

@@ -4,6 +4,7 @@ import React from "react";
 import logo_white from "@/app/assets/logo_white.svg";
 import close from "@/app/assets/close.svg";
 import styles from "./index.module.css";
+import Loading from "./question/Loading";
 
 function FestivalPage() {
   return (

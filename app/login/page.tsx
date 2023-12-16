@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./index.module.css";
 import AlertBox from "./AlertBox";
-import useAuthStore from "../store";
+import { useAuthStore } from "../store";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { instance } from "../api";

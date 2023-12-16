@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./index.module.css";
@@ -8,6 +8,15 @@ import AnswerChip from "./AnswerChip";
 import ResultModal from "./ResultModal";
 import arrow_left from "@/app/assets/arrow_left.svg";
 import close from "@/app/assets/close.svg";
+import { instance } from "@/app/api";
+import { useTestResultStore } from "@/app/store";
+
+export type RESPONSE_DATA_TYPE = {
+  contentid: number;
+  addr1: string;
+  title: string;
+  firstimage: string;
+};
 
 const QUESTION_LIST = [
   {
@@ -78,12 +87,44 @@ function FestivalTestPage() {
   const [activeAnswerIndex, setActiveAnswerIndex] = useState<null | number>(
     null
   );
+  const [answerArray, setAnswerArray] = useState<string[]>([]);
+  const [isFetching, setIsFetching] = useState(false);
+  const [resultData, setResultData] = useState<RESPONSE_DATA_TYPE>();
 
   const handleActiveAnswerClick = (index: number) => {
     setActiveAnswerIndex(index);
-    console.log(
-      QUESTION_LIST[currentQuestionIndex].answerList[index].answerBody
-    );
+    if (
+      QUESTION_LIST[currentQuestionIndex].answerList[index].answerBody !== null
+    ) {
+      setAnswerArray((prev) => {
+        const updatedArray = [
+          ...prev,
+          QUESTION_LIST[currentQuestionIndex].answerList[index]
+            .answerBody as string,
+        ];
+        return updatedArray;
+      });
+    }
+  };
+
+  const handleSubmitClick = async () => {
+    setIsFetching(true);
+    try {
+      const body = answerArray.reduce((acc, value, index) => {
+        acc[`answer${index + 1}`] = value;
+        return acc;
+      }, {} as Record<string, string>);
+
+      await instance
+        .post<RESPONSE_DATA_TYPE>("/festival/ai", body)
+        .then((res) => {
+          useTestResultStore.getState().setResult(res.data.title);
+          setResultData(res.data);
+        });
+      setIsOpenResultModal(true);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -127,22 +168,27 @@ function FestivalTestPage() {
               )
             )}
           </ul>
-          <button
-            className={`${activeAnswerIndex !== null && styles.white_active}`}
-            onClick={() => {
-              if (currentQuestionIndex !== 5) {
+          {currentQuestionIndex !== 5 ? (
+            <button
+              className={`${activeAnswerIndex !== null && styles.white_active}`}
+              onClick={() => {
                 setCurrentQuestionIndex((prev) => prev + 1);
                 setActiveAnswerIndex(null);
-              } else {
-                setIsOpenResultModal(true);
-              }
-            }}
-          >
-            다음
-          </button>
+              }}
+            >
+              다음
+            </button>
+          ) : (
+            <button
+              className={`${activeAnswerIndex !== null && styles.white_active}`}
+              onClick={handleSubmitClick}
+            >
+              제출
+            </button>
+          )}
         </>
       )}
-      {isOpenResultModal && <ResultModal />}
+      {isOpenResultModal && <ResultModal data={resultData!} />}
     </>
   );
 }

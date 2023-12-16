@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./index.module.css";
 import speech_balloon from "@/app/assets/speech_balloon.png";
 import arrow_left from "@/app/assets/arrow_left.svg";
+import { useTestResultStore } from "../store";
 
 const TestBanner = () => {
   return (
@@ -20,7 +21,11 @@ const TestBanner = () => {
               width={108}
               height={38}
             />
-            <div>어디로 가볼까?</div>
+            <div>
+              {useTestResultStore.getState().haveTested
+                ? "다시 해볼까?"
+                : "어디로 가볼까?"}
+            </div>
           </div>
         </div>
       </section>

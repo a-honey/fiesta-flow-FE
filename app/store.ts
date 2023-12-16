@@ -15,7 +15,7 @@ interface AuthState {
   logout: () => void;
 }
 
-const useAuthStore = create<AuthState>((set) => ({
+export const useAuthStore = create<AuthState>((set) => ({
   isLoggedIn: false,
   login: (
     id: string,
@@ -37,4 +37,14 @@ const useAuthStore = create<AuthState>((set) => ({
   access_token: null,
 }));
 
-export default useAuthStore;
+interface testResultState {
+  haveTested: boolean;
+  testResult: string | null;
+  setResult: (result: string) => void;
+}
+
+export const useTestResultStore = create<testResultState>((set) => ({
+  haveTested: false,
+  testResult: null,
+  setResult: (result: string) => set({ haveTested: true, testResult: result }),
+}));

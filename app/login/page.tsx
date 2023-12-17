@@ -15,6 +15,7 @@ type RESPONSE_DATA = {
 
 function LoginPage() {
   const router = useRouter();
+
   const [loginFormBody, setLoginFormBody] = useState({
     email: "",
     password: "",

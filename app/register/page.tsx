@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./index.module.css";
 import isValidateEmail from "../libs/isValidateEmail";
 import { instance } from "../api";
 
 function RegisterPage() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(0);
   const [registerFormBody, setRegisterFormBody] = useState({
     email: "",
@@ -27,6 +29,7 @@ function RegisterPage() {
 
     try {
       const response = await instance.post("/users/signup", registerFormBody);
+      router.push("/home");
     } catch (error) {
       console.log(error);
     }

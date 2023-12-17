@@ -1,5 +1,6 @@
 "use client";
 import React, { SetStateAction, useState } from "react";
+import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./index.module.css";
@@ -10,6 +11,12 @@ import arrow_left from "@/app/assets/arrow_left.svg";
 import close from "@/app/assets/close.svg";
 import { instance } from "@/app/api";
 import { useTestResultStore } from "@/app/store";
+
+const timeInstance = axios.create({
+  timeout: 1000 * 6 * 10 * 2,
+});
+
+Object.assign(instance.defaults, timeInstance.defaults);
 
 export type RESPONSE_DATA_TYPE = {
   contentid: number;

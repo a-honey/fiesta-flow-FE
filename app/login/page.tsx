@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./index.module.css";
 import AlertBox from "./AlertBox";
-import { useAuthStore } from "../store";
+import useAuthStore from "../store";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { instance } from "../api";
@@ -24,20 +24,21 @@ function LoginPage() {
     e.preventDefault();
 
     try {
-      const response = await instance.post<RESPONSE_DATA>(
-        "/auth/login",
-        loginFormBody
-      );
-      useAuthStore
-        .getState()
-        .login(
-          response.data.id,
-          response.data.profileImage,
-          "유저이름",
-          response.data.access_token
-        );
-      router.push("/home");
+      await instance
+        .post<RESPONSE_DATA>("/auth/login", loginFormBody)
+        .then((res) => {
+          useAuthStore
+            .getState()
+            .login(
+              res.data.id,
+              res.data.profileImage,
+              "유저이름",
+              res.data.access_token
+            );
+          router.push("/home");
+        });
     } catch (error) {
+      console.log(useAuthStore.getState().name);
       console.log(error);
     }
   };

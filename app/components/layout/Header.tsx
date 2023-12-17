@@ -6,7 +6,7 @@ import styles from "./Header.module.css";
 import notification from "@/app/assets/notification.svg";
 import profile_svg from "@/app/assets/profile.svg";
 import login_svg from "@/app/assets/login.svg";
-import { useAuthStore } from "@/app/store";
+import useAuthStore from "@/app/store";
 
 const Header = () => {
   const { isLoggedIn, profile, name } = useAuthStore((state) => ({

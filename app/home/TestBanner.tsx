@@ -22,7 +22,7 @@ const TestBanner = () => {
               height={38}
             />
             <div>
-              {useTestResultStore.getState().haveTested
+              {useTestResultStore?.getState().haveTested
                 ? "다시 해볼까?"
                 : "어디로 가볼까?"}
             </div>

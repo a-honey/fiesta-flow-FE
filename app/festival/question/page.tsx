@@ -132,9 +132,14 @@ function FestivalTestPage() {
       setIsOpenResultModal(true);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsFetching(false);
     }
   };
 
+  if (isFetching) {
+    return <Loading />;
+  }
   return (
     <>
       <section className={styles.icon_container}>

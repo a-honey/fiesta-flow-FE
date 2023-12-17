@@ -2,7 +2,7 @@ import useAuthStore from "../store";
 import axios from "axios";
 
 const base = {
-  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+  baseURL: "http://223.130.130.127:5000",
   timeout: 5000,
 };
 

@@ -9,6 +9,10 @@ import ImageSelectModal from "./ImageSelectModal";
 const MyEditPage = () => {
   const [isOpenImageSelectModal, setIsOpenImageSelectModal] = useState(false);
 
+  const toggleIsOpenImageSelectModal = () => {
+    setIsOpenImageSelectModal((prev) => !prev);
+  };
+
   return (
     <>
       <div className={styles.page_container}>
@@ -30,7 +34,11 @@ const MyEditPage = () => {
           <span>2자 이상 10자 이내로 입력해주세요</span>
         </div>
       </div>
-      {isOpenImageSelectModal && <ImageSelectModal />}
+      {isOpenImageSelectModal && (
+        <ImageSelectModal
+          toggleIsOpenImageSelectModal={toggleIsOpenImageSelectModal}
+        />
+      )}
     </>
   );
 };

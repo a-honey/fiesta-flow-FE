@@ -72,7 +72,7 @@
   left: 0;
   right: 0;
   height: 441px;
-  background-color: gray;
+  background-color: #1c1c1c;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -87,9 +87,15 @@
 .image_grid_container {
   display: grid;
   grid-template-columns: 83px 83px 83px;
-  grid-template-columns: 83px 83px;
+  grid-template-rows: 83px 83px;
   gap: 20px;
-  margin: 35px 20px 40px 20px;
+  margin: 35px 30px 40px 30px;
+}
+
+.image_grid_container > div {
+  position: relative;
+  width: 83px;
+  height: 83px;
 }
 
 .btns_container {
@@ -101,8 +107,18 @@
 
 .btns_container > button {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 12px;
-  background-color: pink;
+  background-color: #287cff;
   border-radius: 10px;
+}
+
+.btn_cancel {
+  color: #287cff;
+  background: linear-gradient(rgba(32, 44, 77, 0.3), rgba(32, 44, 77, 0.3)),
+    #287cff;
+}
+
+.btn_save {
+  color: #ffffff;
 }

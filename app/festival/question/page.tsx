@@ -9,6 +9,7 @@ import AnswerChip from "./AnswerChip";
 import ResultModal from "./ResultModal";
 import arrow_left from "@/app/assets/arrow_left.svg";
 import close from "@/app/assets/close.svg";
+import Loading from "./Loading";
 import { instance } from "@/app/api";
 import { useTestResultStore } from "@/app/store";
 

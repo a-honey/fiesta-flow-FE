@@ -4,6 +4,7 @@ import React from "react";
 import logo_white from "@/app/assets/logo_white.svg";
 import close from "@/app/assets/close.svg";
 import styles from "./index.module.css";
+import Loading from "./question/Loading";
 
 function FestivalPage() {
   return (
@@ -16,7 +17,7 @@ function FestivalPage() {
           className={styles.logo}
           src={logo_white}
           alt="Fiesta Flow logo"
-          width={55}
+          width={52}
           height={30}
         />
         <div className={styles.content_container}>

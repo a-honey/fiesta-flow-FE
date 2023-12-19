@@ -46,3 +46,8 @@ COPY --from=builder /app/.next/prerender-manifest.json /app/.next/prerender-mani
 COPY --from=builder /app/.next/prerender-manifest.json /app/.next/prerender-manifest.json
 COPY --from=builder /app/.next/prerender-manifest.json /app/server/pages-manifest.json
 COPY --from=builder /app/.next/prerender-manifest.json /app/.next/prerender-manifest.json
+
+EXPOSE 3000
+ENV PORT 3000
+ENV HOSTNAME "0.0.0.0"
+CMD ["npm", "start"]

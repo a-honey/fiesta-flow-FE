@@ -1,18 +1,17 @@
 "use client";
-import React, { SetStateAction, useState } from "react";
+import React, { Suspense, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./index.module.css";
 import QuestionChip from "./QuestionChip";
 import AnswerChip from "./AnswerChip";
-import ResultModal from "./ResultModal";
 import arrow_left from "@/app/assets/arrow_left.svg";
 import close from "@/app/assets/close.svg";
 import Loading from "./Loading";
 import { instance } from "@/app/api";
-import { useTestResultStore } from "@/app/store";
 
+const ResultModal = React.lazy(() => import("./ResultModal"));
 const timeInstance = axios.create({
   timeout: 1000 * 6 * 10 * 2,
 });
@@ -96,8 +95,7 @@ function FestivalTestPage() {
     null
   );
   const [answerArray, setAnswerArray] = useState<string[]>([]);
-  const [isFetching, setIsFetching] = useState(false);
-  const [resultData, setResultData] = useState<RESPONSE_DATA_TYPE>();
+  const [body, setBody] = useState<unknown>();
 
   const handleActiveAnswerClick = (index: number) => {
     setActiveAnswerIndex(index);
@@ -115,31 +113,16 @@ function FestivalTestPage() {
     }
   };
 
-  const handleSubmitClick = async () => {
-    setIsFetching(true);
-    try {
-      const body = answerArray.reduce((acc, value, index) => {
-        acc[`answer${index + 1}`] = value;
-        return acc;
-      }, {} as Record<string, string>);
+  const handleSubmitClick = () => {
+    const body = answerArray.reduce((acc, value, index) => {
+      acc[`answer${index + 1}`] = value;
+      return acc;
+    }, {} as Record<string, string>);
 
-      await instance
-        .post<RESPONSE_DATA_TYPE>("/festival/ai", body)
-        .then((res) => {
-          useTestResultStore.getState().setResult(res.data.title);
-          setResultData(res.data);
-        });
-      setIsOpenResultModal(true);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsFetching(false);
-    }
+    setBody(body);
+    setIsOpenResultModal(true);
   };
 
-  if (isFetching) {
-    return <Loading />;
-  }
   return (
     <>
       <section className={styles.icon_container}>
@@ -201,7 +184,12 @@ function FestivalTestPage() {
           )}
         </>
       )}
-      {isOpenResultModal && <ResultModal data={resultData!} />}
+
+      {isOpenResultModal && (
+        <Suspense fallback={<Loading />}>
+          <ResultModal body={body} />
+        </Suspense>
+      )}
     </>
   );
 }

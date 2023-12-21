@@ -4,6 +4,8 @@
 
 🔗 서비스 링크 : https://tripper-fe.vercel.app/
 
+🔗 비사이드 소개: https://bside.best/projects/detail/P231205084848
+
 🔗 프론트 레포 : https://github.com/potenday-project/fiesta-flow-FE
 
 🔗 백엔드 레포 : https://github.com/potenday-project/tripper-BE
